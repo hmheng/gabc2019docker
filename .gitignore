@@ -1,0 +1,8 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/GABC2019Dock/v15
+/GABC2019Dock/bin
+/GABC2019Dock/obj
+/GABC2019Dock/Properties/PublishProfiles
