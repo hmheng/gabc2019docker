@@ -1,8 +1,8 @@
 ﻿#intro {
     background: url(../img/venue-gallery/intro-bg.jpg) top center !important;
     background-size: cover !important;
+    height: 120vh !important;
 }
-
 #intro .intro-container {
     top:120px !important;
 }
@@ -81,7 +81,7 @@
 @media (max-width: 640px) {
 
     #intro .intro-container {
-        top: 250px !important;
+        top: 150px !important;
     }
     .registration-button {
         width: 200px !important;
