@@ -1,0 +1,279 @@
+﻿@using System.Linq
+@using System.Collections.Generic;
+@using GABC2019Dock.Utiltiies
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<!--==========================
+         About Section
+============================-->
+<section id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <h2>About The Event</h2>
+                <p>
+                    Welcome to Global Azure Bootcamp! We are bringing the best minds, experts together for the sixth great Global Azure Bootcamp event in Singapore. <br/>
+                    Join us for the full day event on Azure to learn, share from the best minds from industry, experts and community leaders!
+                </p>
+            </div>
+            <div class="col-lg-3">
+                <h3>Where</h3>
+                <p>
+                    Microsoft Singapore<br/>
+                    #21-01 One Marina Boulevard<br/>
+                    Singapore 018989
+                </p>
+            </div>
+            <div class="col-lg-3">
+                <h3>When</h3>
+                <p>Saturday<br>27 April 2019</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--==========================
+  Schedule Section
+============================-->
+<section id="schedule" class="section-with-bg">
+    <div class="container wow fadeInUp">
+        <div class="section-header">
+            <h2>Event Schedule</h2>
+            <p>We are having a great line-up speakers from around the world to share their passion, experiences in Azure with you!</p>
+        </div>
+
+        <ul class="nav nav-tabs" role="tablist">
+            @foreach (var category in Model.sessionizeModel.categories)
+            {
+                @for (var i = 0; i < category.items.Count; i++)
+                {
+                    <li class="nav-item">
+                        @if (i == 0)
+                        {
+                        <a class="nav-link active" href="#track-@i" role="tab" data-toggle="tab">Track @(i + 1)</a>
+                        }
+                        else
+                        {
+                        <a class="nav-link" href="#track-@i" role="tab" data-toggle="tab">Track @(i + 1)</a>
+                        }
+                    </li>
+                }
+            }
+
+            <h3 class="sub-heading">
+            </h3>
+
+            <div class="tab-content row justify-content-center">
+                @for (var i = 0; i < @Model.scheduleModel[0].rooms.Count; i++)
+                {
+                    @if (i == 0)
+                    {
+                        <div role="tabpanel" class="col-lg-9 tab-pane fade show active" id="track-@i">
+                            @foreach (var session in @Model.scheduleModel[0].rooms[i].sessions)
+                            {
+
+                                <div class="row schedule-item">
+                                    <div class="col-md-2"><time>@session.startsAt.ToString("HH:mm")</time></div>
+                                    <div class="col-md-10">
+                                        <div class="speaker">
+                                            @foreach (var speaker in session.speakers)
+                                            {
+                                                <img src="@Util.GetProfileSpeakers(Model.speakerModel,speaker.id)" alt="@speaker.name">
+                                            }
+                                        </div>
+                                        <h4>
+                                            @session.title
+                                        </h4>
+                                        <p class="speaker-p">
+                                            <b>
+                                                @foreach (var speaker in session.speakers)
+                                                {
+                                                    @speaker.name 
+                                                }
+                                            </b>
+                                        </p>
+                                        <p>@session.description</p>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    }
+                    else
+                    {
+                        <div role="tabpanel" class="col-lg-9 tab-pane fade" id="track-@i">
+                            @foreach (var session in @Model.scheduleModel[0].rooms[i].sessions)
+                            {
+
+                                <div class="row schedule-item">
+                                    <div class="col-md-2"><time>@session.startsAt.ToString("HH:mm")</time></div>
+                                    <div class="col-md-10">
+                                        <div class="speaker">
+                                            @foreach (var speaker in session.speakers)
+                                            {
+                                                <img src="@Util.GetProfileSpeakers(Model.speakerModel,speaker.id)" alt="@speaker.name">
+                                            }
+                                        </div>
+                                        <h4>@session.title</h4>
+                                        <p class="speaker-p">
+                                            <b>
+                                                @foreach (var speaker in session.speakers)
+                                                {
+                                                    @speaker.name
+                                                }
+                                            </b>
+                                        </p>
+                                        <p>@session.description</p>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    }
+
+                }
+            </div>
+    </div>
+
+</section>
+
+<!--==========================
+  Speakers Section
+============================-->
+<section id="speakers" class="wow fadeInUp">
+    <div class="container">
+        <div class="section-header">
+            <h2>Event Speakers</h2>
+            <p>Here are some of our speakers</p>
+        </div>
+
+        <div class="row">
+            @for (var i = 0; i < Model.speakerModel.Count; i++)
+            {
+                <div class="col-lg-3 col-md-6 padding-left-5 padding-right-5 text-align">
+                    <div class="speaker center">
+                        <div class="center-cropped">
+                            <img src="@Model.speakerModel[i].profilePicture" alt="Speaker 1" class="img-fluid speaker-img">
+                        </div>
+                        <div class="details">
+                            <h3><span>@Model.speakerModel[i].fullName </span></h3>
+                            <p>@Model.speakerModel[i].tagLine</p>
+                            <div class="social">
+                                @foreach (var a in @Model.speakerModel[i].links)
+                                {
+                                    if (@a.title == "Twitter")
+                                    {
+                                        <a href="@a.url"><i class="fab fa-twitter"></i></a>
+                                    }
+                                    else if (@a.title == "Facebook")
+                                    {
+                                        <a href="@a.url"><i class="fab fa-facebook-f"></i></a>
+                                    }
+                                    else if (@a.title == "Blog")
+                                    {
+                                        <a href="@a.url"><i class="fas fa-globe-asia"></i></a>
+                                    }
+                                    else if (@a.title == "LinkedIn")
+                                    {
+                                        <a href="@a.url"><i class="fab fa-linkedin-in"></i></a>
+                                    }
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+</section>
+
+<!--==========================
+  Venue Section
+============================-->
+<section id="venue" class="section-with-bg wow fadeInUp">
+
+    <div class="container-fluid">
+
+        <div class="section-header">
+            <h2>Event Venue</h2>
+            <p>Event venue location info and gallery</p>
+        </div>
+
+        <div class="row no-gutters">
+            <div class="col-lg-6 venue-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8190156141695!2d103.85050331470121!3d1.282386999064683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMcKwMTYnNTYuNiJOIDEwM8KwNTEnMDkuNyJF!5e0!3m2!1sen!2ssg!4v1552149493317" frameborder="0" style="border:0" allowfullscreen></iframe>
+                @*<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0" allowfullscreen></iframe>*@
+            </div>
+
+            <div class="col-lg-6 venue-info">
+                <div class="row justify-content-center">
+                    <div class="col-11 col-lg-8">
+                        <h3>Microsoft Singapore</h3>
+                        <p>
+                            #21-01 One Marina Boulevard
+                            Singapore 018989
+                        </p>
+                    </div>
+                    <div class="credits-tag">
+                        <a href="https://unsplash.com/@@yukato?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Yu Kato"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:8px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Yu Kato</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!--==========================
+  Sponsors Section
+============================-->
+<section id="sponsors" class="wow fadeInUp">
+
+    <div class="container">
+        <div class="section-header">
+            <h2>Sponsors</h2>
+        </div>
+
+        <div class="row no-gutters sponsors-wrap clearfix">
+
+            <div class="col-lg-6 col-md-4 col-xs-6">
+                <div class="sponsor-logo">
+                    <img src="img/sponsors/ms-logo.png" class="img-fluid" alt="">
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-4 col-xs-6">
+                <div class="sponsor-logo">
+                    <img src="img/sponsors/mvp-logo.png" class="img-fluid" alt="">
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-xs-6">
+                <div class="sponsor-logo">
+                    <img src="img/sponsors/CloudMonix-logo.png" class="img-fluid" alt="">
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-xs-6">
+                <div class="sponsor-logo">
+                    <img src="img/sponsors/Serverless360-logo.png" class="img-fluid" alt="">
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-xs-6">
+                <div class="sponsor-logo">
+                    <img src="img/sponsors/jetbrains-logo.png" class="img-fluid" alt="">
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-xs-6">
+                <div class="sponsor-logo">
+                    <img src="img/sponsors/RevDeBug-logo.png" class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>

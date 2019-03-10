@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>@ViewData["Title"] - Global Azure Bootcamp Singapore</title>
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+
+    <!-- Bootstrap CSS File -->
+    <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--Fontawesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <!-- Libraries CSS Files -->
+    <link href="~/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="~/lib/venobox/venobox.css" rel="stylesheet">
+    <link href="~/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Main Stylesheet File -->
+    <link href="~/css/style.css" rel="stylesheet">
+    <link href="~/css/custom.css" rel="stylesheet">
+
+</head>
+<body>
+
+    <!--==========================
+      Header
+    ============================-->
+    <header id="header">
+        <div class="container">
+
+            <div id="logo" class="pull-left">
+                <!-- Uncomment below if you prefer to use a text logo -->
+                <!-- <h1><a href="#main">C<span>o</span>nf</a></h1>-->
+                <a href="#intro" class="scrollto"><img src="img/logo.png" alt="" title=""></a>
+            </div>
+
+            <nav id="nav-menu-container">
+                <ul class="nav-menu">
+                    <li class="menu-active"><a href="#intro">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#schedule">Schedule</a></li>
+                    <li><a href="#speakers">Speakers</a></li>
+                    <li><a href="#venue">Venue</a></li>
+                    <li><a href="#sponsors">Sponsors</a></li>
+                </ul>
+            </nav><!-- #nav-menu-container -->
+        </div>
+    </header><!-- #header -->
+    <!--==========================
+      Intro Section
+    ============================-->
+    <section id="intro">
+        <div class="intro-container wow fadeIn">
+            <h1 class="mb-4 pb-0">Global Azure Bootcamp<br>Singapore</h1>
+            <h2 class="mb-4 pb-0"><span>27 April 2019</span><br /><span>Microsoft Singapore</span></h2>
+            <p class="registration-button">
+                <a href="https://www.meetup.com/mssgug/events/258722977/">REGISTER NOW!</a>
+            </p>
+            <div class="mb-4 pb-0 justify-content-center">
+                <div class="col-12 col-sm-12">
+                    <div class="countdown"><div>00 <span>Days</span></div>  <div>00<span>Hours</span></div> <div>00<span>Minutes</span></div> <div>00<span>Seconds</span></div></div>
+                </div>
+            </div>
+            <div class="credits-tag">
+                <a href="https://unsplash.com/@@maxfelner?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Max Felner"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:8px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Max Felner</span></a>
+            </div>
+        </div>
+    </section>
+    <main role="main">
+        @RenderBody()
+    </main>
+
+    <!--==========================
+      Footer
+    ============================-->
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="copyright">
+                    &copy; Copyright
+                    <script>document.write(new Date().getFullYear());</script> <strong>Microsoft Most Value Professional Singapore Team</strong>. All Rights Reserved
+                </div>
+                <div class="credits">
+                    Powered by  <a href="https://azure.microsoft.com/">Docker on Microsoft Azure & ASP.NET Core</a> |
+                    <!--
+                      All the links in the footer should remain intact.
+                      You can delete the links only if you purchased the pro version.
+                      Licensing information: https://bootstrapmade.com/license/
+                      Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=TheEvent
+                    -->
+                    Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> |
+                    Developed & Customized by <a href="https://twitter.com/hmheng">Marvin Heng</a>
+                </div>
+            </div>
+    </footer>
+
+    @*<div class="container">
+        <partial name="_CookieConsentPartial" />
+    </div>*@
+
+    <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="~/lib/jquery/jquery.min.js"></script>
+    <script src="~/lib/jquery/jquery-migrate.min.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/easing/easing.min.js"></script>
+    <script src="~/lib/superfish/hoverIntent.js"></script>
+    <script src="~/lib/superfish/superfish.min.js"></script>
+    <script src="~/lib/wow/wow.min.js"></script>
+    <script src="~/lib/venobox/venobox.min.js"></script>
+    <script src="~/lib/owlcarousel/owl.carousel.min.js"></script>
+    <!--Counter up -->
+    <script src="~/js/jquery.counterup.min.js"></script>
+    <!--Counter down -->
+    <script src="~/js/jquery.countdown.min.js"></script>
+
+    <!-- Template Main Javascript File -->
+    <script src="~/js/main.js"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
