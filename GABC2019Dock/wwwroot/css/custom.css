@@ -253,6 +253,11 @@ a {
     position: absolute !important;
     bottom: 0 !important;
     right: 0 !important;
+    opacity: 0.3 !important;
+    transition: all ease-in-out 0.4s;
+}
+.credits-tag:hover {
+    opacity: 0.8 !important;
 }
     .credits-tag a {
         background-color: rgba(0,0,0,0.4);
