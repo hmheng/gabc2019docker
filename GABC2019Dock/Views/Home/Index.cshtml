@@ -14,15 +14,15 @@
             <div class="col-lg-6">
                 <h2>About The Event</h2>
                 <p>
-                    Welcome to Global Azure Bootcamp! We are bringing the best minds, experts together for the sixth great Global Azure Bootcamp event in Singapore. <br/>
+                    Welcome to Global Azure Bootcamp! We are bringing the best minds, experts together for the sixth great Global Azure Bootcamp event in Singapore. <br />
                     Join us for the full day event on Azure to learn, share from the best minds from industry, experts and community leaders!
                 </p>
             </div>
             <div class="col-lg-3">
                 <h3>Where</h3>
                 <p>
-                    Microsoft Singapore<br/>
-                    #21-01 One Marina Boulevard<br/>
+                    Microsoft Singapore<br />
+                    #21-01 One Marina Boulevard<br />
                     Singapore 018989
                 </p>
             </div>
@@ -52,18 +52,17 @@
                     <li class="nav-item">
                         @if (i == 0)
                         {
-                        <a class="nav-link active" href="#track-@i" role="tab" data-toggle="tab">Track @(i + 1)</a>
+                            <a class="nav-link active" href="#track-@i" role="tab" data-toggle="tab">Track @(i + 1)</a>
                         }
                         else
                         {
-                        <a class="nav-link" href="#track-@i" role="tab" data-toggle="tab">Track @(i + 1)</a>
+                            <a class="nav-link" href="#track-@i" role="tab" data-toggle="tab">Track @(i + 1)</a>
                         }
                     </li>
                 }
             }
 
-            <h3 class="sub-heading">
-            </h3>
+            <h3 class="sub-heading"></h3>
 
             <div class="tab-content row justify-content-center">
                 @for (var i = 0; i < @Model.scheduleModel[0].rooms.Count; i++)
@@ -77,12 +76,15 @@
                                 <div class="row schedule-item">
                                     <div class="col-md-2"><time>@session.startsAt.ToString("HH:mm")</time></div>
                                     <div class="col-md-10">
-                                        <div class="speaker">
-                                            @foreach (var speaker in session.speakers)
+                                        @foreach (var speaker in session.speakers)
+                                        {
+                                            @if (speaker.name != null && speaker.id != null)
                                             {
-                                                <img src="@Util.GetProfileSpeakers(Model.speakerModel,speaker.id)" alt="@speaker.name">
+                                                <div class="speaker">
+                                                    <img src="@Util.GetProfileSpeakers(Model.speakerModel,speaker.id)" alt="@speaker.name">
+                                                </div>
                                             }
-                                        </div>
+                                        }
                                         <h4>
                                             @session.title
                                         </h4>
@@ -90,7 +92,7 @@
                                             <b>
                                                 @foreach (var speaker in session.speakers)
                                                 {
-                                                    @speaker.name 
+                                                    @speaker.name
                                                 }
                                             </b>
                                         </p>
@@ -109,12 +111,15 @@
                                 <div class="row schedule-item">
                                     <div class="col-md-2"><time>@session.startsAt.ToString("HH:mm")</time></div>
                                     <div class="col-md-10">
-                                        <div class="speaker">
-                                            @foreach (var speaker in session.speakers)
+                                        @foreach (var speaker in session.speakers)
+                                        {
+                                            @if (speaker.name != null && speaker.id != null)
                                             {
-                                                <img src="@Util.GetProfileSpeakers(Model.speakerModel,speaker.id)" alt="@speaker.name">
+                                                <div class="speaker">
+                                                    <img src="@Util.GetProfileSpeakers(Model.speakerModel,speaker.id)" alt="@speaker.name">
+                                                </div>
                                             }
-                                        </div>
+                                        }
                                         <h4>@session.title</h4>
                                         <p class="speaker-p">
                                             <b>
