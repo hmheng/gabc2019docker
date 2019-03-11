@@ -274,12 +274,15 @@ a {
 
 /*Sponsors*/
 .sponsor-logo .img-fluid {
-    width: 200px !important;
+    width: 90% !important;
     height: auto !important;
     padding: 0px;
 }
+.sponsor-logo .img-fluid-s{
+    width: 70% !important;
+}
 #sponsors .sponsor-logo {
-    padding: 50px !important;
+    padding: 30px !important;
     border: none !important;
 }
 #sponsors .sponsors-wrap {
