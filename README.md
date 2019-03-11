@@ -1,6 +1,6 @@
 # gabc2019docker
 
-This project is developed by Marvin for Global Azure Bootcamp Singapore and several other planned events.
+This ASP.NET Core web project is developed by Marvin for Global Azure Bootcamp Singapore 2019 and several other planned events.
 The technologies involved:
 - ASP.NET Core 2.2
 - Docker on Azure
