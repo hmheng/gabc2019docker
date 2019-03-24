@@ -1,4 +1,4 @@
-# gabc2019docker
+# Community Event Web Site with Sessionize integration
 
 This ASP.NET Core web project is developed & customized by Marvin for Global Azure Bootcamp Singapore 2019 and several other planned events.
 The technologies involved:
