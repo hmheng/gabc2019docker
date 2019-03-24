@@ -3,7 +3,7 @@
 This ASP.NET Core web project is developed & customized by Marvin for Global Azure Bootcamp Singapore 2019 and several other planned events.
 The technologies involved:
 - ASP.NET Core 2.2
-- Docker on Azure
+- Docker on Azure (removed)
 - Microsoft Visual Studio IDE
 - Sessionize API integration
 
