@@ -2,6 +2,6 @@
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ActiveDebugProfile>Docker</ActiveDebugProfile>
-    <NameOfLastUsedPublishProfile>GABC2019Docker</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>GABC2019Docker - Web Deploy1</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>
