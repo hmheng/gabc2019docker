@@ -301,3 +301,7 @@ a {
         border: none !important;
     }
 }
+
+#schedule .nav-tabs a {
+    padding: 10px 60px !important;
+}

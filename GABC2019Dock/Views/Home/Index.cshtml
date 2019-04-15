@@ -22,7 +22,7 @@
                 <h3>Where</h3>
                 <p>
                     Microsoft Singapore<br />
-                    #21-01 One Marina Boulevard<br />
+                    #22-01 One Marina Boulevard<br />
                     Singapore 018989
                 </p>
             </div>
@@ -90,10 +90,14 @@
                                         </h4>
                                         <p class="speaker-p">
                                             <b>
-                                                @foreach (var speaker in session.speakers)
-                                                {
-                                                    @speaker.name
+                                                @{
+                                                    var names = "";
+                                                    foreach (var speaker in session.speakers)
+                                                    {
+                                                        names = names + " " + speaker.name;
+                                                    }
                                                 }
+                                                @names
                                             </b>
                                         </p>
                                         <p>@session.description</p>
@@ -123,10 +127,14 @@
                                         <h4>@session.title</h4>
                                         <p class="speaker-p">
                                             <b>
-                                                @foreach (var speaker in session.speakers)
-                                                {
-                                                    @speaker.name
+                                                @{
+                                                    var names = "";
+                                                    foreach (var speaker in session.speakers)
+                                                    {
+                                                        names = names + " " + speaker.name;
+                                                    }
                                                 }
+                                                @names
                                             </b>
                                         </p>
                                         <p>@session.description</p>
@@ -216,7 +224,7 @@
                     <div class="col-11 col-lg-8">
                         <h3>Microsoft Singapore</h3>
                         <p>
-                            #21-01 One Marina Boulevard
+                            #22-01 One Marina Boulevard
                             Singapore 018989
                         </p>
                     </div>
