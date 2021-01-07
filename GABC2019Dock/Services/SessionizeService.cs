@@ -17,15 +17,22 @@ namespace GABC2019Dock.Services
         public async Task<SessionizeModel> GetSessionizeDataAsync(string sessionizeEndpoint)
         {
             SessionizeModel sessionizeModel = null;
-            if (_httpClient != null)
+            try
             {
-                var response = await _httpClient.GetAsync(sessionizeEndpoint);
-
-                if (response.IsSuccessStatusCode)
+                if (_httpClient != null)
                 {
-                    sessionizeModel = JsonConvert.DeserializeObject<SessionizeModel>(await response.Content.ReadAsStringAsync());
-                    sessionizeModel.sessions = sessionizeModel.sessions.OrderBy(x => x.categoryItems[0]).ToList();
+                    var response = await _httpClient.GetAsync(sessionizeEndpoint);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        sessionizeModel = JsonConvert.DeserializeObject<SessionizeModel>(await response.Content.ReadAsStringAsync());
+                        sessionizeModel.sessions = sessionizeModel.sessions.OrderBy(x => x.roomId).ToList();
+                    }
                 }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
             }
 
             return sessionizeModel;

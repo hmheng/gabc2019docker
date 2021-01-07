@@ -1,4 +1,8 @@
-﻿#intro {
+﻿:root {
+    --primary-color: #d5522b;
+}
+
+#intro {
     background: url(../img/venue-gallery/intro-bg.jpg) top center !important;
     background-size: cover !important;
     height: 120vh !important;
@@ -18,7 +22,7 @@
     }
 
     #intro h1 span {
-        color: #0094ff;
+        color: var(--primary-color);
     }
 
 #intro h2 {
@@ -30,13 +34,13 @@
 }
 
     #intro h2 span {
-        color: #0094ff;
+        color: #fff;
     }
 
 
 .registration-button {
     width: 400px !important;
-    background-color: #0094ff;
+    background-color: var(--primary-color);
     border-radius: 50px;
     padding: 10px !important;
     font-size: 32px !important;
@@ -71,7 +75,7 @@
     }
     .registration-button {
         width: 250px !important;
-        background-color: #0094ff;
+        background-color: var(--primary-color);
         border-radius: 50px;
         padding: 10px !important;
         font-size: 24px !important;
@@ -85,7 +89,7 @@
     }
     .registration-button {
         width: 200px !important;
-        background-color: #0094ff;
+        background-color: var(--primary-color);
         border-radius: 50px;
         padding: 10px !important;
         font-size: 20px !important;
@@ -93,15 +97,15 @@
 }
 
 a {
-    color: #0094ff !important;
+    color: var(--primary-color) !important;
 }
 
 .section-header::before {
-    background-color: #0094ff !important;
+    background-color: var(--primary-color) !important;
 }
 
 .nav-menu > li > a:before {
-    background-color: #0094ff !important;
+    background-color: #fff !important;
 }
 
 .nav-tabs .nav-link {
@@ -113,7 +117,7 @@ a {
 }
 
 #schedule .nav-tabs a.active {
-    background-color: #0094ff !important;
+    background-color: var(--primary-color) !important;
 }
 
 .countdown {
@@ -125,7 +129,7 @@ a {
         display: inline-block;
         padding: 25px;
         min-width: 120px;
-        background-color: #0094ff;
+        background-color: var(--primary-color);
         color: #ffffff;
         font-size: 48px;
         font-weight: 600;
@@ -141,17 +145,17 @@ a {
 
 
 #footer .footer-top h4 {
-    color: #0094ff !important;
-    border-bottom: 2px solid #0094ff;
+    color: var(--primary-color) !important;
+    border-bottom: 2px solid var(--primary-color);
 }
 
 #footer .footer-top .footer-links ul i {
-    color: #0094ff !important;
+    color: var(--primary-color) !important;
 }
 
 .back-to-top {
     color: #fff !important;
-    background-color: #0094ff !important;
+    background-color: var(--primary-color) !important;
 }
 
 .pull-left {
@@ -230,7 +234,7 @@ a {
 }
 
 .speaker-p {
-    color: #0094ff !important;
+    color: var(--primary-color) !important;
     text-transform: capitalize !important;
 }
 

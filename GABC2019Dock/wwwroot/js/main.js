@@ -153,8 +153,7 @@ jQuery(document).ready(function( $ ) {
     });
 
     $(".countdown")
-        .countdown("2019/04/27 09:00:00", function (event) {
-            console.log(event);
+        .countdown("2021/01/16 09:00:00", function (event) {
             $(this).html(
                 event.strftime('<div>%D <span>Days</span></div>  <div>%H<span>Hours</span></div> <div>%M<span>Minutes</span></div> <div>%S<span>Seconds</span></div>')
             );

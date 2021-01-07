@@ -8,7 +8,10 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
-
+:root {
+    --primary-color: #d5522b;
+    --secondary-color: #4a4d53;
+}
 body {
   background: #fff;
   color: #2f3138;
@@ -43,7 +46,7 @@ h6 {
   font-weight: 400;
   margin: 0 0 20px 0;
   padding: 0;
-  color: #0e1b4d;
+  color: var(--primary-color);
 }
 
 .main-page {
@@ -274,7 +277,7 @@ h6 {
 
 .nav-menu .menu-active a,
 .nav-menu a:hover {
-  color: #fff;
+  color: #fff !important;
 }
 
 .nav-menu > li {
@@ -288,7 +291,7 @@ h6 {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #f82249;
+  background-color: #fff !important;
   visibility: hidden;
   transition: all 0.3s ease-in-out 0s;
 }
@@ -433,9 +436,9 @@ h6 {
   color: #f82249;
 }
 
-#mobile-nav ul .menu-item-active {
-  color: #f82249;
-}
+    #mobile-nav ul .menu-item-active {
+        color: var(--secondary-color);
+    }
 
 #mobile-body-overly {
   width: 100%;
@@ -816,15 +819,15 @@ body.mobile-nav-active #mobile-nav-toggle {
   border: none;
   border-radius: 50px;
   font-weight: 600;
-  background-color: #0e1b4d;
+  background-color: var(--secondary-color);
   color: #fff;
   padding: 10px 100px;
 }
 
-#schedule .nav-tabs a.active {
-  background-color: #f82249;
-  color: #fff;
-}
+    #schedule .nav-tabs a.active {
+        background-color: var(--primary-color);
+        color: #fff;
+    }
 
 #schedule .sub-heading {
   text-align: center;

@@ -20,9 +20,9 @@ namespace GABC2019Dock.Controllers
         public async Task<IActionResult> Index()
         {
             IndexViewModel indexViewModel = new IndexViewModel();
-            indexViewModel.sessionizeModel = await _sessionizeService.GetSessionizeDataAsync("https://sessionize.com/api/v2/30hmbobr/view/all");
-            indexViewModel.scheduleModel = await _sessionizeService.GetScheduleAsync("https://sessionize.com/api/v2/30hmbobr/view/grid");
-            indexViewModel.speakerModel = await _sessionizeService.GetSpeakersAsync("https://sessionize.com/api/v2/30hmbobr/view/speakers");
+            indexViewModel.sessionizeModel = await _sessionizeService.GetSessionizeDataAsync("https://sessionize.com/api/v2/hxphr8dp/view/all");
+            indexViewModel.scheduleModel = await _sessionizeService.GetScheduleAsync("https://sessionize.com/api/v2/hxphr8dp/view/grid");
+            indexViewModel.speakerModel = await _sessionizeService.GetSpeakersAsync("https://sessionize.com/api/v2/hxphr8dp/view/speakers");
             indexViewModel.scheduleModel = SetPlenumSession(indexViewModel.scheduleModel);
 
             return View(indexViewModel);
