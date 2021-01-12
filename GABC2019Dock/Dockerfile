@@ -7,7 +7,7 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0-buster-slim AS build
 
-FROM microsoft/dotnet:2.2-sdk AS build
+FROM microsoft/dotnet:5.0-sdk AS build
 WORKDIR /src
 COPY ["GABC2019Dock/GABC2019Dock.csproj", "GABC2019Dock/"]
 RUN dotnet restore "GABC2019Dock/GABC2019Dock.csproj"
